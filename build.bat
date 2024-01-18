@@ -4,4 +4,4 @@ mkdir build
 cd build
 cmake ..
 cmake --build .
-start CMakeProject_Template_1.sln
+rem start 2D-Shape-Create.sln

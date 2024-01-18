@@ -6,6 +6,12 @@ project(
 	DESCRIPTION "CMake Project Template ver. 1 for future projects"
 	LANGUAGES CXX)
 
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/../cmake)
+
+find_package(SDL2 REQUIRED)
+find_package(SDL2_image REQUIRED)
+find_package(SDL2_ttf REQUIRED)
+
 # Source Files
 set(CORE_SOURCE_FILES
 	src/core.cpp)
@@ -24,6 +30,16 @@ target_include_directories(core
 	PRIVATE
 		${CMAKE_CURRENT_SOURCE_DIR}/include
 		# ${CMAKE_CURRENT_SOURCE_DIR}/include/core
+		${SDL2_INCLUDE_DIR}
+        ${SDL2_IMAGE_INCLUDE_DIR}
+        ${SDL2_TTF_INCLUDE_DIR}
 )
 
 target_compile_features(core PRIVATE cxx_std_20)
+
+target_link_libraries(core
+    PRIVATE
+        ${SDL2_LIBRARY}
+        ${SDL2_IMAGE_LIBRARIES}
+        ${SDL2_TTF_LIBRARIES}
+)
