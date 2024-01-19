@@ -2,7 +2,7 @@
 
 project(
 	2D-Shape-Create
-	VERSION 0.0.2
+	VERSION 0.0.1
 	DESCRIPTION "CMake Project Template ver. 1 for future projects"
 	LANGUAGES CXX)
 
