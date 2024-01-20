@@ -4,6 +4,8 @@
 // Standard C++ Libraries
 #include <iostream>
 #include <cmath>
+#include <vector>
+#include <map>
 
 // External Libraries
 #include <SDL.h>

@@ -3,35 +3,28 @@
 
 #include "shapecreate2d_utilities.h"
 
-// One instance of this class since main purpose is to manage planes, etc.
 class ShapeCreate2D {
 
 	public:
-		static ShapeCreate2D& ShapeCreate2DInstance() {
-			static ShapeCreate2D instance;
-			return instance;
-		}
+		ShapeCreate2D() {};
 
-		static void ShapeCreate2DEvents(SDL_Event* events);
-		static void ShapeCreate2DUpdate();
-		static void ShapeCreate2DRender(SDL_Renderer* renderer);
+		void ShapeCreate2DEvents(SDL_Event* events);
+		void ShapeCreate2DUpdate();
+		void ShapeCreate2DRender(SDL_Renderer* renderer);
 
-		static void CreateShape();
-		static void CreateShapeCustom();
+		void AddPoint(const float x, const float y);
+		void DeletePoint(const float x, const float y);
 
-		// Non-static member functions here:
+		void CreateShape(const bool fill);
+		void DeleteShape();
 
 	private:
-		// Private constructor to prevent instantiation
-		ShapeCreate2D() {};
-		// Private destructor to prevent deletion
-		~ShapeCreate2D() {};
+		bool in_creation_;
 
-		// Non-static member variables here:
+		std::map<std::pair<float, float>, SDL_Vertex> vertices_; // Used to create a single shape
+		std::pair<float, float> prev_point_; // Allows for undoing points
 
-		// Private copy constructor and assignment operator to prevent copying
-		ShapeCreate2D(const ShapeCreate2D&) = delete;
-		ShapeCreate2D& operator=(const ShapeCreate2D&) = delete;
+		std::map<std::pair<float, float>, Plane2D> shapes_; // Stores all shapes based on their center position (switch with stack container?)
 };
 
 #endif // SHAPECREATE2D_H

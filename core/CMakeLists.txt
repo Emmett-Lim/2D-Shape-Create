@@ -15,14 +15,14 @@ find_package(SDL2_ttf REQUIRED)
 # Source Files
 set(CORE_SOURCE_FILES
 	"src/shapecreate2d.cpp"
-	"src/plane2D.cpp")
+	"src/plane2d.cpp")
 
 # Header Files
 set(CORE_HEADER_FILES
 	"include/core/shapecreate2d.h"
 	"include/core/shapecreate2d_utilities.h"
 	"include/core/utilities.h"
-	"include/core/plane2D.h")
+	"include/core/plane2d.h")
 
 # By default this is already a static library
 add_library(core STATIC ${CORE_SOURCE_FILES} ${CORE_HEADER_FILES})

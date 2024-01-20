@@ -22,8 +22,6 @@ class Application {
 	
 		SDL_Window* window_{ nullptr };
 		SDL_Renderer* renderer_{ nullptr };
-
-		ShapeCreate2D& shapecreate2d_instance_ = ShapeCreate2D::ShapeCreate2DInstance();
 		// SDL_Texture* texture_{ nullptr };
 };
 
