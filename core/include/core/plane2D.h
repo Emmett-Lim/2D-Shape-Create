@@ -6,8 +6,9 @@
 class Plane2D {
 	
 	public:
-		Plane2D(const std::map<std::pair<float, float>, SDL_Vertex>& vertices, bool fill)
-			: fill_(fill) { this->CreatePlane2D(vertices); }
+		Plane2D(const std::map<std::pair<float, float>, SDL_Vertex>& vertices,
+				const bool fill)
+		: fill_(fill) { this->CreatePlane2D(vertices); }
 
 		void CreatePlane2D(const std::map<std::pair<float, float>, SDL_Vertex>& vertices);
 

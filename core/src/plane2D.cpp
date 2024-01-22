@@ -1,7 +1,12 @@
 #include "core/plane2d.h"
 
-void Plane2D::CreatePlane2D(const std::map<std::pair<float, float>, SDL_Vertex>& vertices) {
+void Plane2D::CreatePlane2D(const std::map<std::pair<float, float>,
+										   SDL_Vertex>& vertices) {
 
+	// Calculate distance using set of points P = {A, B, C} to target = D
+	// Get two points from P with least distance to D to connect with
+
+	/*
 	size_t count{ 0 };
 	for (auto i{ vertices.begin() }; i != vertices.end(); ++i) {
 
@@ -17,6 +22,14 @@ void Plane2D::CreatePlane2D(const std::map<std::pair<float, float>, SDL_Vertex>&
 
 		++count;
 	}
+	*/
+
+	for (auto i{ vertices.begin() }; i != vertices.end(); ++i) {
+
+		this->vertices_.push_back(i->second);
+	}
+
+
 }
 
 void Plane2D::RenderPlane2D(SDL_Renderer* renderer) {
