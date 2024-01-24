@@ -15,14 +15,16 @@ class Application {
 		void Update();
 		void Render();
 
-		const int SCREEN_WIDTH{ 1600 };
-		const int SCREEN_HEIGHT{ 768 };
+		const int SCREEN_WIDTH{ 1280 };
+		const int SCREEN_HEIGHT{ 736 };
 	
 		bool is_running_{ true };
 	
 		SDL_Window* window_{ nullptr };
 		SDL_Renderer* renderer_{ nullptr };
 		// SDL_Texture* texture_{ nullptr };
+
+		// ShapeCreate2D create_;
 };
 
 #endif // APPLICATION_H

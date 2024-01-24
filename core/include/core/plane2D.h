@@ -7,10 +7,14 @@ class Plane2D {
 	
 	public:
 		Plane2D(const std::map<std::pair<float, float>, SDL_Vertex>& vertices,
-				const bool fill)
-		: fill_(fill) { this->CreatePlane2D(vertices); }
+			const bool fill)
+			: fill_(fill) {
+			this->CreatePlane2D(vertices);
+		}
+		Plane2D(const SDL_Vertex& center_pos);
 
 		void CreatePlane2D(const std::map<std::pair<float, float>, SDL_Vertex>& vertices);
+		void CreateCircle2D(const SDL_Vertex& center_pos);
 
 		std::pair<float, float> CalculateCentroid();
 

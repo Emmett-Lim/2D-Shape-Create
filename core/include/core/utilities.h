@@ -6,7 +6,6 @@
 #include <cmath>
 #include <vector>
 #include <map>
-#include <stack>
 
 // External Libraries
 #include <SDL.h>
